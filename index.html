@@ -66,91 +66,158 @@
           <p>The end goal: a robot that knows your house better than you do. And brings you a cold one.</p>
         </div>
         <div class="about-svg">
-          <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-label="AXIOM robot diagram">
-            <!-- Glow filter -->
+          <svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg" aria-label="AXIOM robot - 3/4 front view">
             <defs>
               <filter id="glow">
                 <feGaussianBlur stdDeviation="3" result="blur"/>
                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
               <filter id="glow-strong">
-                <feGaussianBlur stdDeviation="5" result="blur"/>
+                <feGaussianBlur stdDeviation="6" result="blur"/>
                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
+              <radialGradient id="wheel-face-l" cx="38%" cy="38%">
+                <stop offset="0%" stop-color="#1a0e00"/>
+                <stop offset="100%" stop-color="#050505"/>
+              </radialGradient>
+              <radialGradient id="wheel-face-r" cx="58%" cy="38%">
+                <stop offset="0%" stop-color="#120a00"/>
+                <stop offset="100%" stop-color="#050505"/>
+              </radialGradient>
             </defs>
 
-            <!-- Left wheel -->
-            <circle cx="55" cy="270" r="50" fill="none" stroke="#a0522d" stroke-width="6" opacity="0.7"/>
-            <circle cx="55" cy="270" r="35" fill="none" stroke="#6b3a1f" stroke-width="2"/>
-            <circle cx="55" cy="270" r="8" fill="#ff8c00" opacity="0.5"/>
+            <!-- ============ LEFT WHEEL (facing viewer, front-left) ============ -->
+            <!-- Outer tire -->
+            <ellipse cx="93" cy="288" rx="66" ry="62" fill="none" stroke="#a0522d" stroke-width="9" opacity="0.85"/>
+            <!-- Rim inner edge -->
+            <ellipse cx="93" cy="288" rx="55" ry="52" fill="url(#wheel-face-l)" stroke="#cc6600" stroke-width="2"/>
+            <!-- Brake rotor ring -->
+            <ellipse cx="93" cy="288" rx="41" ry="38" fill="none" stroke="#3a2010" stroke-width="1.5" stroke-dasharray="9,5"/>
+            <!-- Hub motor body -->
+            <ellipse cx="93" cy="288" rx="13" ry="12" fill="#1a0e00" stroke="#ff8c00" stroke-width="1.5" opacity="0.9"/>
+            <ellipse cx="93" cy="288" rx="6" ry="6" fill="#ff8c00" opacity="0.7" filter="url(#glow)"/>
+            <ellipse cx="93" cy="288" rx="2.5" ry="2.5" fill="#ffcc44" opacity="1"/>
+            <!-- 8 spokes -->
+            <line x1="93" y1="226" x2="93" y2="350" stroke="#5a3010" stroke-width="2.5"/>
+            <line x1="27" y1="288" x2="159" y2="288" stroke="#5a3010" stroke-width="2.5"/>
+            <line x1="46" y1="241" x2="140" y2="335" stroke="#5a3010" stroke-width="2"/>
+            <line x1="140" y1="241" x2="46" y2="335" stroke="#5a3010" stroke-width="2"/>
+            <!-- Hub bolt ring -->
+            <ellipse cx="93" cy="288" rx="20" ry="19" fill="none" stroke="#4a2a0a" stroke-width="1" stroke-dasharray="3,5"/>
+
+            <!-- ============ RIGHT WHEEL (facing viewer, slightly recessed) ============ -->
+            <!-- Outer tire -->
+            <ellipse cx="287" cy="274" rx="58" ry="55" fill="none" stroke="#8a4020" stroke-width="8" opacity="0.75"/>
+            <!-- Rim -->
+            <ellipse cx="287" cy="274" rx="48" ry="46" fill="url(#wheel-face-r)" stroke="#bb5500" stroke-width="1.5"/>
+            <!-- Brake rotor ring -->
+            <ellipse cx="287" cy="274" rx="36" ry="34" fill="none" stroke="#301808" stroke-width="1.5" stroke-dasharray="8,5"/>
+            <!-- Hub -->
+            <ellipse cx="287" cy="274" rx="11" ry="11" fill="#120800" stroke="#dd7700" stroke-width="1.5" opacity="0.85"/>
+            <ellipse cx="287" cy="274" rx="5" ry="5" fill="#ff8c00" opacity="0.6" filter="url(#glow)"/>
+            <ellipse cx="287" cy="274" rx="2" ry="2" fill="#ffcc44" opacity="0.9"/>
             <!-- Spokes -->
-            <line x1="55" y1="220" x2="55" y2="320" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="5" y1="270" x2="105" y2="270" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="19" y1="234" x2="91" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="91" y1="234" x2="19" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="287" y1="219" x2="287" y2="329" stroke="#4a2808" stroke-width="2"/>
+            <line x1="229" y1="274" x2="345" y2="274" stroke="#4a2808" stroke-width="2"/>
+            <line x1="246" y1="233" x2="328" y2="315" stroke="#4a2808" stroke-width="1.5"/>
+            <line x1="328" y1="233" x2="246" y2="315" stroke="#4a2808" stroke-width="1.5"/>
 
-            <!-- Right wheel -->
-            <circle cx="245" cy="270" r="50" fill="none" stroke="#a0522d" stroke-width="6" opacity="0.7"/>
-            <circle cx="245" cy="270" r="35" fill="none" stroke="#6b3a1f" stroke-width="2"/>
-            <circle cx="245" cy="270" r="8" fill="#ff8c00" opacity="0.5"/>
-            <!-- Spokes -->
-            <line x1="245" y1="220" x2="245" y2="320" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="195" y1="270" x2="295" y2="270" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="209" y1="234" x2="281" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
-            <line x1="281" y1="234" x2="209" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+            <!-- ============ AXLE TUBE ============ -->
+            <line x1="159" y1="288" x2="229" y2="274" stroke="#cc6600" stroke-width="5" opacity="0.65"/>
+            <!-- Axle end caps -->
+            <ellipse cx="159" cy="288" rx="5" ry="4" fill="#ff8c00" opacity="0.5"/>
+            <ellipse cx="229" cy="274" rx="4" ry="4" fill="#ff8c00" opacity="0.4"/>
 
-            <!-- Left fork legs -->
-            <line x1="55" y1="270" x2="90" y2="245" stroke="#ff8c00" stroke-width="3" opacity="0.8"/>
-            <line x1="55" y1="270" x2="90" y2="310" stroke="#a0522d" stroke-width="2.5" opacity="0.7"/>
-            <!-- Right fork legs -->
-            <line x1="245" y1="270" x2="210" y2="245" stroke="#ff8c00" stroke-width="3" opacity="0.8"/>
-            <line x1="245" y1="270" x2="210" y2="310" stroke="#a0522d" stroke-width="2.5" opacity="0.7"/>
+            <!-- ============ FORK STRUCTURE ============ -->
+            <!-- Left fork blades (over wheel, coming from crown) -->
+            <line x1="93" y1="288" x2="138" y2="188" stroke="#ff8c00" stroke-width="4" opacity="0.9"/>
+            <line x1="93" y1="288" x2="78" y2="184" stroke="#dd6600" stroke-width="3" opacity="0.75"/>
+            <!-- Left fork crown -->
+            <rect x="74" y="180" width="68" height="11" rx="3" fill="#1a0e00" stroke="#ff8c00" stroke-width="2"/>
 
-            <!-- Sling tray -->
-            <rect x="88" y="295" width="124" height="38" rx="2" fill="#111" stroke="#ff8c00" stroke-width="1.5" opacity="0.9"/>
-            <rect x="92" y="299" width="50" height="30" rx="1" fill="#1a1a1a" stroke="#cc6600" stroke-width="1"/>
-            <text x="117" y="318" fill="#ff8c00" font-family="monospace" font-size="7" text-anchor="middle" opacity="0.8">4090</text>
-            <rect x="147" y="299" width="40" height="30" rx="1" fill="#1a1a1a" stroke="#6b3a1f" stroke-width="1"/>
-            <text x="167" y="318" fill="#a0522d" font-family="monospace" font-size="6" text-anchor="middle">ANKER</text>
-            <rect x="191" y="303" width="16" height="22" rx="1" fill="#1a1a1a" stroke="#6b3a1f" stroke-width="1"/>
-            <text x="199" y="317" fill="#6b3a1f" font-family="monospace" font-size="5" text-anchor="middle">OD</text>
+            <!-- Right fork blades -->
+            <line x1="287" y1="274" x2="258" y2="182" stroke="#ff8c00" stroke-width="3.5" opacity="0.8"/>
+            <line x1="287" y1="274" x2="296" y2="178" stroke="#dd6600" stroke-width="2.5" opacity="0.65"/>
+            <!-- Right fork crown -->
+            <rect x="253" y="174" width="48" height="10" rx="3" fill="#1a0e00" stroke="#ff8c00" stroke-width="1.5"/>
+
+            <!-- Top crossbar connecting fork crowns -->
+            <line x1="142" y1="185" x2="253" y2="179" stroke="#cc6600" stroke-width="3" opacity="0.55"/>
+
+            <!-- ============ INVERTED LEGS TO SLING TRAY ============ -->
+            <!-- Left leg: from axle area down to tray -->
+            <line x1="138" y1="288" x2="134" y2="355" stroke="#cc6600" stroke-width="3.5" opacity="0.85"/>
+            <!-- Right leg -->
+            <line x1="244" y1="278" x2="242" y2="348" stroke="#cc6600" stroke-width="3" opacity="0.75"/>
+            <!-- Cross brace -->
+            <line x1="138" y1="322" x2="242" y2="315" stroke="#6b3a1f" stroke-width="1.5" opacity="0.5"/>
+
+            <!-- ============ SLING TRAY (perspective 3D box) ============ -->
+            <!-- Top face -->
+            <polygon points="126,342 255,335 262,352 133,360" fill="#0e0e0e" stroke="#ff8c00" stroke-width="1.8"/>
+            <!-- Front face -->
+            <polygon points="133,360 262,352 264,368 135,376" fill="#0a0a0a" stroke="#6b3a1f" stroke-width="1"/>
+            <!-- Left face -->
+            <polygon points="126,342 133,360 135,376 128,358" fill="#0c0c0c" stroke="#4a2810" stroke-width="1"/>
+            <!-- Internal dividers -->
+            <line x1="175" y1="338" x2="177" y2="374" stroke="#3a2010" stroke-width="1"/>
+            <line x1="215" y1="336" x2="217" y2="371" stroke="#3a2010" stroke-width="1"/>
+            <!-- Component labels -->
+            <text x="153" y="355" fill="#ff8c00" font-family="monospace" font-size="6.5" opacity="0.75">4090</text>
+            <text x="186" y="354" fill="#a0522d" font-family="monospace" font-size="5.5" opacity="0.6">C1000</text>
+            <text x="233" y="353" fill="#5a3010" font-family="monospace" font-size="5" opacity="0.5">ODrv</text>
 
             <!-- Rear caster -->
-            <circle cx="150" cy="345" r="8" fill="none" stroke="#6b3a1f" stroke-width="2"/>
-            <line x1="150" y1="333" x2="150" y2="337" stroke="#6b3a1f" stroke-width="2"/>
+            <ellipse cx="192" cy="385" rx="13" ry="9" fill="none" stroke="#4a2810" stroke-width="2"/>
+            <line x1="192" y1="376" x2="192" y2="376" stroke="#4a2810" stroke-width="2"/>
 
-            <!-- Camera mast -->
-            <rect x="147" y="100" width="6" height="196" fill="#cc6600" opacity="0.9" filter="url(#glow)"/>
-            <!-- Mast base brace -->
-            <line x1="135" y1="270" x2="150" y2="296" stroke="#cc6600" stroke-width="2" opacity="0.6"/>
-            <line x1="165" y1="270" x2="150" y2="296" stroke="#cc6600" stroke-width="2" opacity="0.6"/>
+            <!-- ============ CAMERA MAST ============ -->
+            <!-- Mast -->
+            <rect x="188" y="96" width="7" height="246" fill="#cc6600" opacity="0.95" filter="url(#glow)"/>
+            <!-- Mast-to-tray braces -->
+            <line x1="177" y1="338" x2="191" y2="342" stroke="#cc6600" stroke-width="2" opacity="0.5"/>
+            <line x1="207" y1="336" x2="195" y2="342" stroke="#cc6600" stroke-width="2" opacity="0.5"/>
+            <!-- Mid-mast cross brace -->
+            <line x1="178" y1="220" x2="213" y2="218" stroke="#6b3a1f" stroke-width="1.5" opacity="0.4"/>
 
             <!-- Pan/tilt bracket -->
-            <rect x="135" y="90" width="30" height="12" rx="2" fill="#1a1a1a" stroke="#ff8c00" stroke-width="1.5"/>
+            <rect x="176" y="85" width="33" height="13" rx="2" fill="#141414" stroke="#ff8c00" stroke-width="1.8"/>
+            <!-- Tilt arm detail -->
+            <line x1="176" y1="91" x2="155" y2="95" stroke="#cc6600" stroke-width="1.5" opacity="0.6"/>
+            <line x1="209" y1="91" x2="228" y2="94" stroke="#cc6600" stroke-width="1.5" opacity="0.5"/>
 
-            <!-- Camera head -->
-            <rect x="118" y="60" width="64" height="32" rx="3" fill="#111" stroke="#ff8c00" stroke-width="2" filter="url(#glow)"/>
-            <!-- Left camera eye -->
-            <circle cx="134" cy="76" r="9" fill="#0a0a0a" stroke="#ff8c00" stroke-width="1.5"/>
-            <circle cx="134" cy="76" r="5" fill="#ff8c00" opacity="0.15"/>
-            <circle cx="134" cy="76" r="2" fill="#ff8c00" opacity="0.8" filter="url(#glow-strong)"/>
-            <!-- Right camera eye -->
-            <circle cx="166" cy="76" r="9" fill="#0a0a0a" stroke="#ff8c00" stroke-width="1.5"/>
-            <circle cx="166" cy="76" r="5" fill="#ff8c00" opacity="0.15"/>
-            <circle cx="166" cy="76" r="2" fill="#ff8c00" opacity="0.8" filter="url(#glow-strong)"/>
+            <!-- ============ CAMERA HEAD ============ -->
+            <rect x="150" y="55" width="82" height="34" rx="3" fill="#0a0a0a" stroke="#ff8c00" stroke-width="2.2" filter="url(#glow)"/>
+            <!-- Top vents -->
+            <line x1="155" y1="60" x2="228" y2="60" stroke="#cc6600" stroke-width="0.6" opacity="0.35"/>
+            <line x1="155" y1="64" x2="228" y2="64" stroke="#cc6600" stroke-width="0.6" opacity="0.35"/>
+            <!-- LEFT lens -->
+            <circle cx="171" cy="72" r="12" fill="#050505" stroke="#ff8c00" stroke-width="2.2"/>
+            <circle cx="171" cy="72" r="8" fill="#080808" stroke="#cc5500" stroke-width="1.2"/>
+            <circle cx="171" cy="72" r="4" fill="#ff8c00" opacity="0.85" filter="url(#glow-strong)"/>
+            <circle cx="171" cy="72" r="1.8" fill="#ffdd88" opacity="1"/>
+            <circle cx="168" cy="69" r="1.2" fill="white" opacity="0.25"/>
+            <!-- RIGHT lens -->
+            <circle cx="211" cy="72" r="12" fill="#050505" stroke="#ff8c00" stroke-width="2.2"/>
+            <circle cx="211" cy="72" r="8" fill="#080808" stroke="#cc5500" stroke-width="1.2"/>
+            <circle cx="211" cy="72" r="4" fill="#ff8c00" opacity="0.85" filter="url(#glow-strong)"/>
+            <circle cx="211" cy="72" r="1.8" fill="#ffdd88" opacity="1"/>
+            <circle cx="208" cy="69" r="1.2" fill="white" opacity="0.25"/>
+            <!-- Head corner bolts -->
+            <circle cx="156" cy="61" r="2" fill="#3a2010"/>
+            <circle cx="226" cy="61" r="2" fill="#3a2010"/>
+            <circle cx="156" cy="83" r="2" fill="#3a2010"/>
+            <circle cx="226" cy="83" r="2" fill="#3a2010"/>
 
-            <!-- Camera scan lines (decorative) -->
-            <line x1="118" y1="70" x2="182" y2="70" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
-            <line x1="118" y1="76" x2="182" y2="76" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
-            <line x1="118" y1="82" x2="182" y2="82" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
+            <!-- Vision cones (subtle) -->
+            <line x1="161" y1="55" x2="118" y2="18" stroke="#ff8c00" stroke-width="0.5" opacity="0.1"/>
+            <line x1="221" y1="55" x2="264" y2="18" stroke="#ff8c00" stroke-width="0.5" opacity="0.1"/>
 
-            <!-- "Vision cone" subtle lines -->
-            <line x1="134" y1="60" x2="100" y2="30" stroke="#ff8c00" stroke-width="0.5" opacity="0.15"/>
-            <line x1="166" y1="60" x2="200" y2="30" stroke="#ff8c00" stroke-width="0.5" opacity="0.15"/>
-            <line x1="150" y1="60" x2="150" y2="20" stroke="#ff8c00" stroke-width="0.5" opacity="0.1"/>
+            <!-- Ground glow -->
+            <ellipse cx="192" cy="430" rx="110" ry="10" fill="#ff8c00" opacity="0.035"/>
 
-            <!-- Label: AXIOM -->
-            <text x="150" y="390" fill="#a0522d" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="4" opacity="0.5">A X I O M</text>
+            <!-- Label -->
+            <text x="192" y="450" fill="#6b3a1f" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="5" opacity="0.35">A X I O M</text>
           </svg>
         </div>
       </div>
