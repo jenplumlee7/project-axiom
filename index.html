@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROJECT AXIOM — It Learns. It Roams. It Fetches Beer.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a class="logo" href="#">AXIOM</a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">MENU</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#tech">Tech</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#log">Build Log</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <pre class="hero-ascii">
+                          |
+                          |  [CAM-L] [CAM-R]
+                          |    \      /
+                          |     ======   &lt;-- pan/tilt head
+                          |      ||||
+                          |      ||||   &lt;-- articulating mast
+                          |      ||||
+    ______________________|______|______|______________________
+   /                      |      |      |                      \
+  /      FORK             |      |      |             FORK      \
+ |      /                 |      |      |                 \      |
+ |     /    [============ SLING TRAY =============]        \     |
+ |    /     [  RTX 4090  ][   ANKER C1000  ][ODrive]       \    |
+ |   /      [===========================================]    \   |
+ |  /                                                         \  |
+(O)                                                           (O)
+ 29"                                                          29"
+ HUB                                                          HUB
+    </pre>
+    <h1 class="hero-title">AXIOM</h1>
+    <p class="hero-subtitle">Autonomous Experiential Intelligence Machine</p>
+    <p class="hero-tagline">It learns. It roams. It fetches beer.</p>
+    <p class="hero-scroll">▼ scroll</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">// unit overview</p>
+        <h2 class="section-title">What Is AXIOM?</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>AXIOM is a custom-built home robot designed to <span class="highlight">explore, learn, and improve itself</span> over time. Not a toy. Not a kit. Fabricated from raw steel, powered by a desktop-class GPU, and guided by a local AI brain that gets smarter with every room it enters.</p>
+          <p>The frame is welded by hand — a low-slung open tray suspended between two 29" hub-drive wheels using an <span class="highlight">inverted fork geometry</span>. The center of gravity hangs below the axle line, pendulum-style, making it naturally self-stabilizing even as the camera mast moves.</p>
+          <p>An articulating camera post rises from the tray, topped with two <span class="highlight">Intel RealSense D455</span> depth cameras on Dynamixel pan/tilt servos. AXIOM sees in 3D. It maps. It navigates. It logs everything it encounters and ships that data to a dedicated training server — which fine-tunes its own model and sends an updated brain back.</p>
+          <p>The end goal: a robot that knows your house better than you do. And brings you a cold one.</p>
+        </div>
+        <div class="about-svg">
+          <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-label="AXIOM robot diagram">
+            <!-- Glow filter -->
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="glow-strong">
+                <feGaussianBlur stdDeviation="5" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Left wheel -->
+            <circle cx="55" cy="270" r="50" fill="none" stroke="#a0522d" stroke-width="6" opacity="0.7"/>
+            <circle cx="55" cy="270" r="35" fill="none" stroke="#6b3a1f" stroke-width="2"/>
+            <circle cx="55" cy="270" r="8" fill="#ff8c00" opacity="0.5"/>
+            <!-- Spokes -->
+            <line x1="55" y1="220" x2="55" y2="320" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="5" y1="270" x2="105" y2="270" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="19" y1="234" x2="91" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="91" y1="234" x2="19" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+
+            <!-- Right wheel -->
+            <circle cx="245" cy="270" r="50" fill="none" stroke="#a0522d" stroke-width="6" opacity="0.7"/>
+            <circle cx="245" cy="270" r="35" fill="none" stroke="#6b3a1f" stroke-width="2"/>
+            <circle cx="245" cy="270" r="8" fill="#ff8c00" opacity="0.5"/>
+            <!-- Spokes -->
+            <line x1="245" y1="220" x2="245" y2="320" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="195" y1="270" x2="295" y2="270" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="209" y1="234" x2="281" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+            <line x1="281" y1="234" x2="209" y2="306" stroke="#6b3a1f" stroke-width="1.5"/>
+
+            <!-- Left fork legs -->
+            <line x1="55" y1="270" x2="90" y2="245" stroke="#ff8c00" stroke-width="3" opacity="0.8"/>
+            <line x1="55" y1="270" x2="90" y2="310" stroke="#a0522d" stroke-width="2.5" opacity="0.7"/>
+            <!-- Right fork legs -->
+            <line x1="245" y1="270" x2="210" y2="245" stroke="#ff8c00" stroke-width="3" opacity="0.8"/>
+            <line x1="245" y1="270" x2="210" y2="310" stroke="#a0522d" stroke-width="2.5" opacity="0.7"/>
+
+            <!-- Sling tray -->
+            <rect x="88" y="295" width="124" height="38" rx="2" fill="#111" stroke="#ff8c00" stroke-width="1.5" opacity="0.9"/>
+            <rect x="92" y="299" width="50" height="30" rx="1" fill="#1a1a1a" stroke="#cc6600" stroke-width="1"/>
+            <text x="117" y="318" fill="#ff8c00" font-family="monospace" font-size="7" text-anchor="middle" opacity="0.8">4090</text>
+            <rect x="147" y="299" width="40" height="30" rx="1" fill="#1a1a1a" stroke="#6b3a1f" stroke-width="1"/>
+            <text x="167" y="318" fill="#a0522d" font-family="monospace" font-size="6" text-anchor="middle">ANKER</text>
+            <rect x="191" y="303" width="16" height="22" rx="1" fill="#1a1a1a" stroke="#6b3a1f" stroke-width="1"/>
+            <text x="199" y="317" fill="#6b3a1f" font-family="monospace" font-size="5" text-anchor="middle">OD</text>
+
+            <!-- Rear caster -->
+            <circle cx="150" cy="345" r="8" fill="none" stroke="#6b3a1f" stroke-width="2"/>
+            <line x1="150" y1="333" x2="150" y2="337" stroke="#6b3a1f" stroke-width="2"/>
+
+            <!-- Camera mast -->
+            <rect x="147" y="100" width="6" height="196" fill="#cc6600" opacity="0.9" filter="url(#glow)"/>
+            <!-- Mast base brace -->
+            <line x1="135" y1="270" x2="150" y2="296" stroke="#cc6600" stroke-width="2" opacity="0.6"/>
+            <line x1="165" y1="270" x2="150" y2="296" stroke="#cc6600" stroke-width="2" opacity="0.6"/>
+
+            <!-- Pan/tilt bracket -->
+            <rect x="135" y="90" width="30" height="12" rx="2" fill="#1a1a1a" stroke="#ff8c00" stroke-width="1.5"/>
+
+            <!-- Camera head -->
+            <rect x="118" y="60" width="64" height="32" rx="3" fill="#111" stroke="#ff8c00" stroke-width="2" filter="url(#glow)"/>
+            <!-- Left camera eye -->
+            <circle cx="134" cy="76" r="9" fill="#0a0a0a" stroke="#ff8c00" stroke-width="1.5"/>
+            <circle cx="134" cy="76" r="5" fill="#ff8c00" opacity="0.15"/>
+            <circle cx="134" cy="76" r="2" fill="#ff8c00" opacity="0.8" filter="url(#glow-strong)"/>
+            <!-- Right camera eye -->
+            <circle cx="166" cy="76" r="9" fill="#0a0a0a" stroke="#ff8c00" stroke-width="1.5"/>
+            <circle cx="166" cy="76" r="5" fill="#ff8c00" opacity="0.15"/>
+            <circle cx="166" cy="76" r="2" fill="#ff8c00" opacity="0.8" filter="url(#glow-strong)"/>
+
+            <!-- Camera scan lines (decorative) -->
+            <line x1="118" y1="70" x2="182" y2="70" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
+            <line x1="118" y1="76" x2="182" y2="76" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
+            <line x1="118" y1="82" x2="182" y2="82" stroke="#cc6600" stroke-width="0.5" opacity="0.3"/>
+
+            <!-- "Vision cone" subtle lines -->
+            <line x1="134" y1="60" x2="100" y2="30" stroke="#ff8c00" stroke-width="0.5" opacity="0.15"/>
+            <line x1="166" y1="60" x2="200" y2="30" stroke="#ff8c00" stroke-width="0.5" opacity="0.15"/>
+            <line x1="150" y1="60" x2="150" y2="20" stroke="#ff8c00" stroke-width="0.5" opacity="0.1"/>
+
+            <!-- Label: AXIOM -->
+            <text x="150" y="390" fill="#a0522d" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="4" opacity="0.5">A X I O M</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="tech" class="tech-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">// hardware manifest</p>
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <p class="tech-card-label">// compute</p>
+          <p class="tech-card-title">RTX 4090 + Intel 13th Gen</p>
+          <p class="tech-card-desc">64GB RAM. Full desktop GPU onboard. Runs Qwen2.5-VL 7B locally via Ollama. No cloud. No latency. All intelligence is on-device.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// vision</p>
+          <p class="tech-card-title">Dual Intel RealSense D455</p>
+          <p class="tech-card-desc">Active stereo depth, 6m range, 87° FOV, built-in IMU. One forward for navigation, one tilting for object interaction. Software depth processed on the 4090.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// pan/tilt head</p>
+          <p class="tech-card-title">Dynamixel XM430 Servos</p>
+          <p class="tech-card-desc">Digital servos with position feedback, daisy-chain wiring. One axis pan, one axis tilt. Python-controlled via U2D2 USB interface.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// drive</p>
+          <p class="tech-card-title">Bafang 29" Hub Motors</p>
+          <p class="tech-card-desc">Two complete 29" wheel assemblies, 250-350W each. Controlled by ODrive S1 over USB. Slow, torquey, and precise. This isn't a racing bot.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// power</p>
+          <p class="tech-card-title">Anker C1000</p>
+          <p class="tech-card-desc">1000Wh portable power station. Clean, stable DC/AC output for the entire system. Mounted low in the sling tray as ballast and battery.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// frame</p>
+          <p class="tech-card-title">Custom Welded Steel</p>
+          <p class="tech-card-desc">Inverted fork geometry. Open tray slung below the axle line — pendulum-stable by design. Hand-fabricated with a Lincoln Electric 210 MP MIG/TIG welder.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// brain</p>
+          <p class="tech-card-title">Qwen2.5-VL 7B (Multimodal)</p>
+          <p class="tech-card-desc">Sees through the cameras and reasons about what it sees. Narrates experiences, plans navigation, logs everything. Fine-tuned continuously via LoRA.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-card-label">// training server</p>
+          <p class="tech-card-title">RTX 6000 Ada (48GB ECC)</p>
+          <p class="tech-card-desc">Dedicated workstation card. Ingests bot logs. Fine-tunes LoRA adapters via Unsloth + Axolotl. Pushes updated model back to the bot. The bot gets smarter over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">// mission objectives</p>
+        <h2 class="section-title">The Vision</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="vision-content">
+        <p>AXIOM isn't a product. It's a platform for building something that didn't exist before — a home robot that genuinely learns from its own experience. Not via telemetry to a server farm. Locally. On hardware you own. With a model that is yours.</p>
+        <p>The architecture is three-tiered: AXIOM handles real-time action on the 4090, a dedicated RTX 6000 Ada server handles training and business ops, and a cloud AI handles the heavy reasoning. Each tier does what it's best at.</p>
+        <div class="vision-stages">
+          <div class="vision-stage">
+            <div class="stage-num">01</div>
+            <div>
+              <p class="stage-title">Build the Brain</p>
+              <p class="stage-desc">Assemble the compute stack. Get Ubuntu running. Validate the vision pipeline, motor control, and servo head. Write the first Python glue scripts. Make it move.</p>
+            </div>
+          </div>
+          <div class="vision-stage">
+            <div class="stage-num">02</div>
+            <div>
+              <p class="stage-title">Fabricate the Frame</p>
+              <p class="stage-desc">Mock up component layout. Design the inverted fork sling around the actual hardware footprint. Weld the frame. Mount everything. First autonomous movement.</p>
+            </div>
+          </div>
+          <div class="vision-stage">
+            <div class="stage-num">03</div>
+            <div>
+              <p class="stage-title">Begin the Loop</p>
+              <p class="stage-desc">Enable experience logging. Ship logs to the training server. First LoRA fine-tune. Push updated adapter to AXIOM. Watch it navigate better next week than it did this week.</p>
+            </div>
+          </div>
+          <div class="vision-stage">
+            <div class="stage-num">04</div>
+            <div>
+              <p class="stage-title">Fetch the Beer</p>
+              <p class="stage-desc">The real benchmark. Navigate to the fridge. Open it. Identify and retrieve a cold one. Deliver without spilling. This is the bar. Everything else is just progress toward it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Log -->
+  <section id="log" class="build-log-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">// field notes</p>
+        <h2 class="section-title">Build Log</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="build-log">
+        <div class="log-entry">
+          <p class="log-date">2026-05-01</p>
+          <p class="log-title">Project AXIOM — Initiated <span class="log-status complete">COMPLETE</span></p>
+          <p class="log-body">Full hardware stack spec'd and locked. GPU, vision, servos, drive system, power, training server. Bill of materials drafted. Frame geometry concept finalized: inverted fork, pendulum sling, low CG design.</p>
+        </div>
+        <div class="log-entry">
+          <p class="log-date">TBD</p>
+          <p class="log-title">Compute Stack Assembly <span class="log-status planned">PLANNED</span></p>
+          <p class="log-body">Source and assemble ITX build with 4090. Install Ubuntu. Validate GPU, run Ollama, test Qwen2.5-VL 7B inference.</p>
+        </div>
+        <div class="log-entry">
+          <p class="log-date">TBD</p>
+          <p class="log-title">Vision Pipeline Validation <span class="log-status planned">PLANNED</span></p>
+          <p class="log-body">Mount dual RealSense D455. Wire Dynamixel servos via U2D2. Validate depth streams, pan/tilt control, camera fusion in Python.</p>
+        </div>
+        <div class="log-entry">
+          <p class="log-date">TBD (post-move)</p>
+          <p class="log-title">Frame Fabrication <span class="log-status planned">PLANNED</span></p>
+          <p class="log-body">MIG weld the sling frame. Mount hub motors. First full rolling test. Begin integration of all subsystems into the physical chassis.</p>
+        </div>
+        <div class="log-entry">
+          <p class="log-date">TBD</p>
+          <p class="log-title">First Autonomous Navigation Run <span class="log-status planned">PLANNED</span></p>
+          <p class="log-body">AXIOM moves through a room without human input. Logs the experience. Ships data to training server. Adapters updated. Loop begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-logo">PROJECT AXIOM</p>
+      <p>// autonomous experiential intelligence machine — v0.1 // still in the shop //</p>
+    </div>
+  </footer>
+
+</body>
+</html>
